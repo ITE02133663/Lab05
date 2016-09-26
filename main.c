@@ -1,3 +1,5 @@
+
+
 #include<stdio.h>
 #include<sys/socket.h>
 #include<arpa/inet.h> //inet_addr
@@ -44,7 +46,7 @@ int main(int argc, char *argv[]) {
     }
     puts("Connected");
 //Send some data
-    server.sin_addr.s_addr = inet_addr("74.125.235.20");
+    message = "GET / HTTP/1.1\r\nHost: mcu.edu.tw\r\n\r\n";
     if (send(socket_desc, message, strlen(message), 0) < 0) {
         puts("Send failed");
         return 1;
