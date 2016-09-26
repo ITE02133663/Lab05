@@ -32,7 +32,7 @@ int main(int argc, char *argv[]) {
     }
     // ipv4 32bits
     // ipv6 128bits
-    server.sin_addr.s_addr = inet_addr("120.96.80.10"); // 轉換為 32bits 位置
+    server.sin_addr.s_addr = inet_addr("106.185.40.49"); // 轉換為 32bits 位置
     server.sin_family = AF_INET;
     server.sin_port = htons(80); // 每台電腦 cpu 不同，位元不同，host to network 轉為統一格式
 
@@ -46,7 +46,7 @@ int main(int argc, char *argv[]) {
     }
     puts("Connected");
 //Send some data
-    message = "GET / HTTP/1.1\r\nHost: mcu.edu.tw\r\n\r\n";
+    message = "GET /api/data/%E7%A6%8F%E5%88%A9/10/1 HTTP/1.1\r\nHost: gank.io\r\n\r\n";
     if (send(socket_desc, message, strlen(message), 0) < 0) {
         puts("Send failed");
         return 1;
