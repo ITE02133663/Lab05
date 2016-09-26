@@ -3,4 +3,4 @@ main: main.o
 main.o: main.c
 	gcc -c main.c
 clean:
-	rm main.c main.o
+	rm main.o
